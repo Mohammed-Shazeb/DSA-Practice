@@ -84,6 +84,41 @@ public class pracLl {
 
     }
 
+    public static void swapNodes(Node x, Node y) {
+        if (x == y || x == null || y == null)
+            return;
+
+        Node prevX = null, prevY = null, curr = head;
+
+        // Find previous nodes of x and y
+        while (curr != null && (prevX == null || prevY == null)) {
+            if (curr.next == x)
+                prevX = curr;
+            if (curr.next == y)
+                prevY = curr;
+            curr = curr.next;
+        }
+
+        if (x == head)
+            head = y;
+        else if (y == head)
+            head = x;
+
+        if (prevX != null) {
+            prevX.next = y;
+        }
+
+        // If y is not head, link prevY to x
+        if (prevY != null) {
+            prevY.next = x;
+        }
+        // Swap next pointers
+        Node temp = x.next;
+        x.next = y.next;
+        y.next = temp;
+
+    }
+
     public static void main(String[] args) {
         // pracLl ll = new pracLl();
         // Node common = new Node(4);
@@ -106,6 +141,7 @@ public class pracLl {
         // LinkedList<Integer> ll = new LinkedList<>();
         pracLl ll = new pracLl();
 
+        // 8->7->6->5->4->3->2->1->null
         ll.addLast(8);
         ll.addLast(7);
         ll.addLast(6);
@@ -114,7 +150,9 @@ public class pracLl {
         ll.addLast(3);
         ll.addLast(2);
         ll.addLast(1);
-        ll.oddEvenInter();
+        // ll.oddEvenInter();
+        ll.print();
+        ll.swapNodes(ll.head.next, ll.head.next.next.next.next);
         ll.print();
     }
 

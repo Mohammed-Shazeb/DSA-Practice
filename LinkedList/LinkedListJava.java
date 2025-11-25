@@ -24,8 +24,6 @@ public class LinkedListJava {
             }
             newNode.next = head;
             head = newNode;
-            
-
         }
 
         public void addLast(int data){

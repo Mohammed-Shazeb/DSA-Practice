@@ -118,6 +118,7 @@ public class BinaryTrees {
             path.remove(path.size()-1);
             return false;
         }
+        
         public static Node lca(Node root, int n1, int n2){
             ArrayList<Node> path1 = new ArrayList<>();
             ArrayList<Node> path2 = new ArrayList<>();
@@ -206,6 +207,33 @@ public class BinaryTrees {
             // System.out.println("Max sum is: "+res.get(res.size()-k));
         }
 
+        public static int kAncestor(Node root, int n, int k){
+            if(root == null) return -1;
+            if(root.data == n) return 0;
+
+            int leftDist = kAncestor(root.left, n, k);
+            int rightDist = kAncestor(root.right, n, k);
+            if(leftDist == -1 && rightDist == -1) return -1;
+            int max = Math.max(leftDist, rightDist);
+            if(max+1 == k){
+                System.out.println(root.data);
+            }
+            return max+1; 
+        }
+
+        public static int transform(Node root){
+            if(root == null) return 0;
+
+            int leftChild = transform(root.left);
+            int rightChild = transform(root.right);
+
+            int data = root.data;
+            int newLeft = (root.left == null)? 0: root.left.data;
+            int newRight = (root.right == null)? 0: root.right.data;
+            root.data = newLeft + leftChild + rightChild + newRight;
+
+            return data;
+        }
     }
     
     
@@ -233,8 +261,12 @@ public class BinaryTrees {
         // tree.levelOrder(root);
         // tree.kthLevel(root, 0, 2);  // 4 5 6
         // System.out.println(tree.lca(root, 4, 5).data); //2
-        System.out.println(tree.lca2(root, 4, 6).data); //1
+        // System.out.println(tree.lca2(root, 4, 6).data); //1
         // tree.levelOrderSumMax(root, 2); // 4 5 6
-        System.out.println(tree.minDist(root, 4, 6)); //3
+        // System.out.println(tree.minDist(root, 4, 6)); //3
+        // tree.kAncestor(root, 5, 2); //1
+        tree.transform(root);
+       tree.preOrder(root);
+
     }
 }

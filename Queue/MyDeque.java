@@ -1,6 +1,7 @@
 package Queue;
 import java.util.*;
 
+// This code defines two custom data structures using Java's built-in Deque
 
 public class MyDeque {
     static class stacks{

@@ -31,7 +31,7 @@ public class JobApplication {
             jobs.add(new Job(i, jobsInfo[i][0], jobsInfo[i][1]));
         }
         
-        Collections.sort(jobs, (a, b) -> b.profit - a.profit);
+        Collections.sort(jobs, (a, b) -> b.profit - a.profit);  // sort in decreasing order of profit
 
         ArrayList<Integer> ans = new ArrayList<>();
         int time = 0;
