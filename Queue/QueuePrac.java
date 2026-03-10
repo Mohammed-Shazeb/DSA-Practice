@@ -38,7 +38,7 @@ public class QueuePrac {
     }
     public static void main(String[] args) {
         int arr[] = {4,3,2,6};
-        // generateBinary(5);
+        generateBinary(5);
         connectNRopes(arr);
     }
 }

@@ -9,7 +9,7 @@ It is a linear order of vertices such that every directed edge u -> v,
 the vertex u comes before v in the order
 */
 
-public class TopologicalSorting {
+public class TopologicalSortingDFS {
     static class Edge {
         int src;
         int dest;
@@ -63,11 +63,25 @@ public class TopologicalSorting {
         s.push(curr);
     }
 
+    public static void printAllPath(ArrayList<Edge> graph[], int src, int dest, String path) {
+        if (src == dest) {
+            System.out.println(path + dest);
+            return;
+        }
+
+        for (int i = 0; i < graph[src].size(); i++) {
+            Edge e = graph[src].get(i);
+            printAllPath(graph, e.dest, dest, path + src);
+        }
+    }
+
     public static void main(String[] args) {
-        int v = 5;
+        int v = 6;
         ArrayList<Edge> graph[] = new ArrayList[v];
         createGraph(graph);
         topologicalSorting(graph);
+
+        printAllPath(graph, 0, 1, "");
 
     }
 

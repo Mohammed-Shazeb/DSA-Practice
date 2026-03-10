@@ -11,7 +11,7 @@ public class KnapSack {
             ratio[i][0] = i;
             ratio[i][1] = (value[i]/(double)weight[i]);
         }
-        Arrays.sort(ratio, Comparator.comparingDouble(o -> o[1]));
+        Arrays.sort(ratio, Comparator.comparingDouble(o -> o[1]));  // ascending order 
         int capacity = W;
         int totalValue = 0;
         for(int i=ratio.length-1;i>=0;i--){

@@ -2,9 +2,10 @@ package Greedy_Algo;
 import java.util.*;
 
 public class ActivitySelection {
-    // This is a greedy algorithm to select the maximum number of activities that can be performed by a single person, assuming that a person can only work on one activity at a time.
+    // This is a greedy algorithm to select the maximum number of activities that can be performed by a single person,
+    //  assuming that a person can only work on one activity at a time.
 // ----------------------------------------------------------------
-    // this is when ,when the end is not sorted
+    // this is when ,when the end is sorted
 
     // public static void main(String[] args) {
     //     int[] start = {1, 3, 0, 5, 8, 5};
@@ -32,7 +33,7 @@ public class ActivitySelection {
     // }
 
 // ----------------------------------------------------------------
-// // this is when ,when the end is already sorted
+// // this is when ,when the end is not sorted
     
     // public static void main(String[] args) {
     //     int[] start = {1, 3, 0, 5, 8, 5};

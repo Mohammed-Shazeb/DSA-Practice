@@ -94,8 +94,8 @@ public class DFS {
         ArrayList<Edge> graph[] = new ArrayList[V];
         createGraph(graph);
         boolean visited[] = new boolean[V];
-        // dfs(graph, 0, visited);
-        System.out.print(hasPath(graph, 0, 6, visited));
+        dfs(graph, 0, visited);
+        System.out.println(hasPath(graph, 0, 6, visited));
         
     }
 }

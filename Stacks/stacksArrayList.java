@@ -20,7 +20,7 @@ public class stacksArrayList {
             list.remove(list.size() - 1);
             return top;
         }
-        public static int peep(){
+        public static int peek(){
             return list.get(list.size()-1);
         }
     }

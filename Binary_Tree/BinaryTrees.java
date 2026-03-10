@@ -138,19 +138,15 @@ public class BinaryTrees {
         }
 
         public static Node lca2(Node root, int n1, int n2){
-            if(root == null){
-                return null;
-            }
-            if(root.data == n1 || root.data == n2){
-                return root;
-            }
+            if(root == null) return null;
+            if(root.data == n1 || root.data == n2) return root;
+
             Node leftLca = lca2(root.left, n1, n2);
             Node rightLca = lca2(root.right, n1, n2);
 
             if(leftLca == null){
                 return rightLca;
-            }
-            if(rightLca == null){
+            } else if(rightLca == null){
                 return leftLca;
             }
             return root;
@@ -160,14 +156,14 @@ public class BinaryTrees {
             if(root == null) return -1;
             if(root.data == n) return 0;
 
-            int ld = lcaDist(root.left, n);
-            int rd = lcaDist(root.right, n);
+            int leftDist = lcaDist(root.left, n);
+            int rightDist = lcaDist(root.right, n);
 
-            if(ld == -1 && rd == -1) return -1;
-            else if(ld == -1) return rd+1;
-            else return ld+1;
-
+            if(leftDist == -1 && rightDist == -1) return -1;
+            else if(leftDist == -1) return rightDist+1;
+            else return leftDist+1;
         }
+
         public static int minDist(Node root, int n1, int n2){
             int count = 0;
             Node lca = lca2(root, n1, n2);
@@ -252,12 +248,12 @@ public class BinaryTrees {
         Node root = tree.buildTree(nodes);
 
         // System.out.println(root.data);
-        // tree.preOrder(root);
-        // System.out.println();
-        // tree.inOrder(root);
-        // System.out.println();
-        // tree.postOrder(root);
-        // System.out.println();
+        tree.preOrder(root);
+        System.out.println();
+        tree.inOrder(root);
+        System.out.println();
+        tree.postOrder(root);
+        System.out.println();
         // tree.levelOrder(root);
         // tree.kthLevel(root, 0, 2);  // 4 5 6
         // System.out.println(tree.lca(root, 4, 5).data); //2
@@ -265,8 +261,8 @@ public class BinaryTrees {
         // tree.levelOrderSumMax(root, 2); // 4 5 6
         // System.out.println(tree.minDist(root, 4, 6)); //3
         // tree.kAncestor(root, 5, 2); //1
-        tree.transform(root);
-       tree.preOrder(root);
+    //     tree.transform(root);
+    //    tree.preOrder(root);
 
     }
 }

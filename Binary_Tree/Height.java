@@ -19,23 +19,23 @@ public class Height {
         if (root == null)
             return 0;
 
-        int lf = height(root.left);
-        int rf = height(root.right);
-        return Math.max(lf, rf) + 1;
+        int lh = height(root.left);
+        int rh = height(root.right);
+        return Math.max(lh, rh) + 1;
     }
 
     public static int count(Node root) {
         if (root == null)
-        return 0;
+            return 0;
 
         int leftCount = count(root.left);
         int rightCount = count(root.right);
         return leftCount + rightCount + 1;
-        }
+    }
 
-        public static int sumOfNodes(Node root) {
+    public static int sumOfNodes(Node root) {
         if (root == null)
-        return 0;
+            return 0;
 
         int leftSum = sumOfNodes(root.left);
         int rightSum = sumOfNodes(root.right);
@@ -115,11 +115,11 @@ public class Height {
         subRoot.right = new Node(5);
         /*
          * main tree
-         * 1
-         * / \
-         * 2 3
-         * / \ / \
-         * 4 5 6 7
+         *     1
+         *   /   \
+         *  2     3
+         * / \   / \
+         * 4 5  6   7    
          */
         Node root = new Node(1);
         root.left = new Node(2);
@@ -128,7 +128,7 @@ public class Height {
         root.left.right = new Node(5);
         root.right.left = new Node(6);
         root.right.right = new Node(7);
-        // System.out.println("Height of the tree: " + height(root));
+        System.out.println("Height of the tree: " + height(root));
         // System.out.println("Count of nodes in the tree: " + count(root));
         // System.out.println("Sum of all nodes in the tree: " + sumOfNodes(root));
         // System.out.println("Diameter of the tree: " + diameter(root));
