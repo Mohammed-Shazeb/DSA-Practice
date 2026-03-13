@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package DynamicProgramming.Knapsack;
 
 public class TargetSumSubset {
     public static boolean targetSumSubset(int val[], int target) {
@@ -7,7 +7,7 @@ public class TargetSumSubset {
         
         // initialize first column as true
         for(int i=0; i<n+1; i++) {
-            dp[i][0] = true;
+            dp[i][0] = true; 
         }
         
         for(int i=1; i<n+1; i++) {
@@ -17,8 +17,7 @@ public class TargetSumSubset {
                 if(v<=j && dp[i-1][j-v] == true) {
                     dp[i][j] = true;
                 } else if(dp[i-1][j] == true) { //exclude
-                    dp[i][j] = true;
-                    
+                    dp[i][j] = true;    
                 }
             }
         }

@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package DynamicProgramming.Knapsack;
 
 public class ZeroOneKnapsack {
     public static int knapsackUsingRec(int val[], int wt[], int W, int n) {
