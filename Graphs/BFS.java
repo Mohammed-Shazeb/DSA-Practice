@@ -49,6 +49,7 @@ public class BFS {
         graph[6].add(new Edge(6, 5, 1));
         
     }
+    
     public static void bfs(ArrayList<Edge> graph[]) {
         Queue<Integer> q = new LinkedList<>();
         boolean visited[] = new boolean[graph.length];

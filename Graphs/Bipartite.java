@@ -10,8 +10,8 @@ We can also say that there is no edge that connects vertices of same set.
  0 = color yellow
  1 = color blue
 
-Case 1: neighbor -> color not there so we assign opp. color 
-Case 2: neighbor -> color -> diff will do smtg.
+Case 1: neighbor -> color not there ==> assign opp. color 
+Case 2: neighbor -> color -> diff == > not confirm that if it is bipartite or not.
 Case 3: neighbor -> color -> same ==> results in false.
 
 If a graph is acyclic then it is bipartite.
@@ -68,7 +68,7 @@ public class Bipartite {
         for(int i=0; i<graph.length; i++) {
             if(color[i] == -1) {
                 q.add(i);
-                color[i] = 0; // yellow
+                color[i] = 0; // yellow 
 
                 while (!q.isEmpty()) {
                     int curr = q.remove();
